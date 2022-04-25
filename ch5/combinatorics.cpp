@@ -26,8 +26,8 @@ ll fact[MAX_N], invFact[MAX_N];
 
 ll C(int n, int k) {                             // O(log p)
   if (n < k) return 0;                           // clearly
+  // if (n >= MOD) return (C(n%MOD, k%MOD) * C(n/MOD, k/MOD)) % MOD;          // lucas theorem 
   return (((fact[n] * inv(fact[k])) % p) * inv(fact[n-k])) % p;
-  // return (((fact[n] * invFact[k]) % p) * invFact[n-k]) % p; // O(1)
 }
 
 ll Fib[MAX_N], Cat[MAX_N];
